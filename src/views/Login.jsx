@@ -12,7 +12,7 @@ function Login() {
           Email
         </Form.Label>
         <Col sm="10">
-         <Form.Control type="text" placeholder="Password" />
+         <Form.Control type="text" placeholder="email" />
         </Col>
       </Form.Group>
 
