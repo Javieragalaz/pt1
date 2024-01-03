@@ -5,16 +5,15 @@ import InputGroup from 'react-bootstrap/InputGroup';
 function Transaction() {
   return (
     <>
-     
-
       <InputGroup className="mb-3">
         <Form.Control
           placeholder="$"
           aria-label="Money"
           aria-describedby="basic-addon2"
+          type='number'
         />
         <Button variant="outline-secondary" id="button-addon2">
-        Withdrawal
+          Withdrawal
         </Button>
       </InputGroup>
 
@@ -23,15 +22,13 @@ function Transaction() {
           placeholder="$"
           aria-label="Money"
           aria-describedby="basic-addon2"
+          type='number'
         />
-        <Button variant="outline-secondary" id="button-addon2">
+
+        <Button type='submit' variant="outline-secondary" id="button-addon2">
           Deposit
         </Button>
       </InputGroup>
-
-
-
-  
     </>
   );
 }

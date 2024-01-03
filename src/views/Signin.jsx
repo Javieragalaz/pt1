@@ -1,9 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 
-import react, { useState } from 'react';
+import React, { useState } from 'react';
 
 function Signin() {
 
@@ -25,7 +24,7 @@ function Signin() {
 
     //VALIDACIÓN
 
-    if (name === "" || lastname === "" || email === "" || password === "" || inicialBalance === "") {
+    if (name === "" || lastname === "" || email === "" || password === "" || initialBalance === "") {
       setError(true);
       return;
     }
@@ -42,29 +41,39 @@ function Signin() {
 
   return (
 
-    <Form className='signIn' onSubmit={validateForm}>
-      {error ? <p>Todos los campos son obligatorios</p> : null}
+    <Form className='signIn' >
 
-      <InputGroup>
-
-        <InputGroup.Text>Name</InputGroup.Text>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Nombre</Form.Label>
         <Form.Control type="text" onChange={(e) => setName(e.target.value)} value={name} />
 
-        <InputGroup.Text>Last name</InputGroup.Text>
+
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Apellido</Form.Label>
         <Form.Control type="text" onChange={(e) => setLastname(e.target.value)} value={lastname} />
 
-        <InputGroup.Text>Email</InputGroup.Text>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Email</Form.Label>
         <Form.Control type="text" onChange={(e) => setEmail(e.target.value)} value={email} />
 
-        <InputGroup.Text>Password</InputGroup.Text>
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Contraseña</Form.Label>
         <Form.Control type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
 
-        <InputGroup.Text> initial balance</InputGroup.Text>
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Saldo inicial</Form.Label>
         <Form.Control type="number" onChange={(e) => setInitialBalance(e.target.value)} value={initialBalance} />
 
-      </InputGroup>
+      </Form.Group>
 
-      <Button type='submit'>
+
+      <Button className='button-signin' type='submit'>
         Submit
       </Button>
     </Form>

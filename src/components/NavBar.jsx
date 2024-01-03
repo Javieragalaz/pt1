@@ -8,27 +8,22 @@ import { NavLink } from 'react-router-dom';
 function NavBar() {
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container>
+    <Navbar expand="lg" className="navBar">
+      <Container className= "contNavBar">
 
-      <NavLink className = {({isActive}) => (isActive ? "active" : undefined )} to="/"> BANK </NavLink>
-       
-    <div>
-            <NavLink className = {({isActive}) => (isActive ? "active" : undefined )} to="/login"> Log in </NavLink></div>
+        <div> <NavLink className={({ isActive }) => (isActive ? "active" : undefined)} to="/"> Banco internacional </NavLink></div>
 
-            <div>
-            <NavLink className = {({isActive}) => (isActive ? "active" : undefined )} to="/signin"> Sign in </NavLink></div>
-      
-            <div>
-       <Navbar.Text>
-            n° cuenta:
-          </Navbar.Text> </div>
-            <div>
-       <Navbar.Text>
-            Saldo:$          </Navbar.Text> </div>
+        <div>
+          <NavLink className={({ isActive }) => (isActive ? "active" : undefined)} to="/login"> Ingresa </NavLink></div>
+
+        <div>
+          <NavLink className={({ isActive }) => (isActive ? "active" : undefined)} to="/signin"> Inscríbete</NavLink></div>
+
+
+
       </Container>
 
-   </Navbar>
+    </Navbar>
   );
 }
 

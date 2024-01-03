@@ -4,65 +4,58 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 
-import react, {useState} from 'react';
+import react, { useState } from 'react';
 
 function Login() {
 
-// ESTADOS DEL FORMULARIO
+  // ESTADOS DEL FORMULARIO
 
-const [email, setEmail] = useState ("");
-const [password, setPassword] = useState ("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-// ESTADO PARA LOS ERRORES
+  // ESTADO PARA LOS ERRORES
 
-const [error, setError] = useState ("false");
+  const [error, setError] = useState("false");
 
-// FUNCIÓN ANTES DE ENVIAR EL FORMULARIO
+  // FUNCIÓN ANTES DE ENVIAR EL FORMULARIO
 
-const validateForm = (e) => {
-e.preventDefault();
+  const validateForm = (e) => {
+    e.preventDefault();
 
-//VALIDACIÓN
+    //VALIDACIÓN
 
-if (email === "" || password === "") {
-  setError (true);
-  return;
-}
+    if (email === "" || password === "") {
+      setError(true);
+      return;
+    }
 
-//FORMULARIO ENVIADO CORRECTAMENTE:
+    //FORMULARIO ENVIADO CORRECTAMENTE:
 
-setError (false);
-email ("");
-password ("");
-}
+    setError(false);
+    email("");
+    password("");
+  }
 
   return (
     <Form>
-      <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-        <Form.Label column sm="2">
-          Email
-        </Form.Label>
-        <Col sm="10">
-         <Form.Control type="text" placeholder="email" onChange={(e) => setEmail(e.target.value)}
-         value = {email} />
-        </Col>
-        
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Email</Form.Label>
+        <Form.Control type="email" placeholder="Enter email" />
+        <Form.Text className="text-muted">
+          We'll never share your email with anyone else.
+        </Form.Text>
       </Form.Group>
 
-      <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
-        <Form.Label column sm="2">
-          Password
-        </Form.Label>
-        <Col sm="10">
-          <Form.Control type="password" placeholder="Password" />
-        </Col>
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Contraseña</Form.Label>
+        <Form.Control type="password" placeholder="Password" />
       </Form.Group>
 
-      <Button variant="outline-primary" id="button-addon1">
-          Button
-        </Button>
+      <Button variant="primary"> ingresa a tu cuenta
+
+      </Button>
     </Form>
-    
+
   );
 }
 
