@@ -7,6 +7,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 function Account() {
     return (
         <Container>
+            <h1> Número de cuenta: </h1>
             <Card className="text-center mt-4"  >
                 <Card.Header>Realiza un depósito</Card.Header>
                 <Card.Body>
@@ -34,7 +35,7 @@ function Account() {
 
             </Card>
 
-
+            <h1> Saldo: </h1>
         </Container>
     );
 
