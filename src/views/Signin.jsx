@@ -2,42 +2,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import React, { useState } from 'react';
 
+import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Context } from '../Context';
 function Signin() {
-
-  //ESTADOS DEL FORMULARIO
-  const [name, setName] = useState("");
-  const [lastname, setLastname] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [initialBalance, setInitialBalance] = useState("");
-
-  // ESTADO PARA LOS ERRORES
-
-  const [error, setError] = useState("false");
-
-  // FUNCIÓN ANTES DE ENVIAR EL FORMULARIO
-
-  const validateForm = (e) => {
-    e.preventDefault();
-
-    //VALIDACIÓN
-
-    if (name === "" || lastname === "" || email === "" || password === "" || initialBalance === "") {
-      setError(true);
-      return;
-    }
-
-    //FORMULARIO ENVIADO CORRECTAMENTE:
-
-    setError(false);
-    name("");
-    lastname("");
-    email("");
-    password("");
-    initialBalance("");
-  }
+  const { goToAccount } = useContext(Context);
 
   return (
     <Container>
@@ -68,7 +38,7 @@ function Signin() {
           <Form.Control type="number" onChange={(e) => setInitialBalance(e.target.value)} value={initialBalance} />
         </Form.Group>
 
-        <Button className='button-signin' type='submit'>
+        <Button className='button-signin' onClick={goToAccount}>
           Submit
         </Button>
         

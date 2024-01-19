@@ -3,13 +3,11 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
 
-
-
 function NavBar() {
 
   return (
     <Navbar expand="lg" className="navBar">
-      <Container className= "contNavBar">
+      <Container className="contNavBar">
 
         <div> <NavLink className={({ isActive }) => (isActive ? "active" : undefined)} to="/"> Banco internacional </NavLink></div>
 

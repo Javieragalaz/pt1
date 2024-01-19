@@ -9,23 +9,20 @@ export const Context = createContext();
 
 export const Provider = ({ children }) => { //TODAS LOS HIJOS USAN EL MISMO GLOBAL STATE
     const navigate = useNavigate();
-    const [data, setData] = useState([]);
-    const [balance , setBalance] = useState([]);
-    const [user, serUser] = useState ([])
+    const [balance , setBalance] = useState([]); // SALDO
+    const [user, serUser] = useState ([]) //DATOS DEL USUARIO
+
+
+
+function goToAccount () {
+  navigate (`/account`)
 }
 
-function Transactions() {
-    navigate(`transaction`);
-  }
+
 
   const globalState = {
-    data,
-    setData,
-    balance,
-    setBalance,
-    user,
-    setUser,
-    Transactions
+ 
+    goToAccount,
+  
   }
-
-  return <Context.Provider value={globalState}>{children}</Context.Provider>;
+return <Context.Provider value={globalState}>{children}</Context.Provider> }   ;
